@@ -4,7 +4,8 @@ function App() {
 
   return (
     <div className="text-center">
-      Hello
+      Shopping App
+      {/* 30 min */}
     </div>
   )
 }
