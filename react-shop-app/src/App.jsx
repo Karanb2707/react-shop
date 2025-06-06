@@ -8,7 +8,6 @@ function App() {
       {/* Counter App
       <Counter/> */}
 
-      {/* 1:19 hr */}
     </div>
   )
 }
