@@ -1,10 +1,13 @@
+import Counter from "./components/Counter"
 
 
 function App() {
 
   return (
     <div className="text-center">
-      Shopping App
+      Counter App
+      <Counter/>
+      {/* 42 min */}
     </div>
   )
 }
