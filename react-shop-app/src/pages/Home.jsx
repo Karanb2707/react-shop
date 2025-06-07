@@ -12,7 +12,8 @@ const Home = () => {
 
     try {
       const res = await fetch(API_URL);
-      const data = res.json();
+      const data = await res.json();
+      console.log(data);
       setPosts(data);
     } catch (error) {
       console.log('Error', error);
@@ -30,12 +31,16 @@ const Home = () => {
       {
         loading ? <Spinner /> :
           posts.length > 0 ?
-            posts.map((post) => {
-              return <Product post={post} key={post} />
-            }) :
-            <div className="fixed inset-0 grid place-items-center">
-              <div className='text-xl font-semibold'>Sorry, No Product Found!!</div>
-            </div>
+          <div className='w-8/12 grid grid-cols-3 mt-2 gap-1 mx-auto p-2'>
+            {
+              posts.map((post) => {
+                return <Product post={post} key={post.id} />
+              })
+            }
+          </div> :
+          <div className="fixed inset-0 grid place-items-center">
+            <div className='text-xl font-semibold'>Sorry, No Product Found!!</div>
+          </div>
       }
     </div>
   )

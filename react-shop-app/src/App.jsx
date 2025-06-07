@@ -10,6 +10,7 @@ function App() {
       <div>
         <Navbar />
       </div>
+      {/* 1:50 hr */}
 
       <Routes>
         <Route path="/" element={<Home/>} />
