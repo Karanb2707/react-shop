@@ -31,7 +31,7 @@ const Home = () => {
       {
         loading ? <Spinner /> :
           posts.length > 0 ?
-          <div className='w-8/12 grid grid-cols-3 mt-2 gap-1 mx-auto p-2'>
+          <div className='w-full lg:w-8/12 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mt-2 gap-1 mx-auto p-2'>
             {
               posts.map((post) => {
                 return <Product post={post} key={post.id} />
