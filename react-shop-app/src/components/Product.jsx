@@ -14,7 +14,7 @@ const Product = ({post}) => {
       <img src={post.image} className='h-[160px] p-1'/>
       <div className='w-full flex flex-row items-center justify-between p-1 mt-2'>
         <p className='font-semibold text-green-800 text-[14px]'>Price: {post.price} ₹</p>
-        <button className='py-1 px-2 rounded-full ring ring-amber-800 bg-amber-600 text-white font-semibold text-[14px]'>
+        <button className='py-1 px-2 rounded-full ring ring-amber-800 bg-amber-600 text-white font-semibold text-[14px] cursor-pointer'>
           {
             selected ? <p>Remove Item</p> : <p>Add to Cart</p>
           }
