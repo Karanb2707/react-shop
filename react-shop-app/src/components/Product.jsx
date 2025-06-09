@@ -9,12 +9,12 @@ const Product = ({ post }) => {
   const dispatch = useDispatch();
 
   const addToCart = () => {
-    dispatch(add(post.id));
+    dispatch(add(post));
     toast.success('Item added to Cart')
   }
 
   const removeFromCart = () => {
-    dispatch(remove(post));
+    dispatch(remove(post.id));
     toast.error('Item removed from Cart')
   }
 
