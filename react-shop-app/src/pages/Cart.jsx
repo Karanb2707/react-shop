@@ -32,7 +32,7 @@ const Cart = () => {
 
                 <div className='font-semibold'>
                   <span>Total Items : {cart.length}</span>
-                  <h1>Total Amount : {totalAmt} ₹</h1>
+                  <h1>Total Amount : {totalAmt.toFixed(2)} ₹</h1>
                 </div>
                 <button className='py-1 w-[180px] text-[16px] font-semibold text-white bg-blue-600 ring ring-blue-900 rounded-3xl'>
                   Checkout
