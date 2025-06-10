@@ -1,6 +1,17 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { remove } from '../redux/slices/CartSlice';
+import { toast } from 'react-hot-toast';
 
 const CartItem = ({ item }) => {
+
+  const dispatch = useDispatch();
+
+  const removeFromCart = () => {
+    dispatch(remove(item.id));
+    toast.error('Item removed!');
+  }
+
   return (
     <div>
       <div>
@@ -16,7 +27,7 @@ const CartItem = ({ item }) => {
         <p>
           {item.price}
         </p>
-        <button>
+        <button onClick={removeFromCart}>
           Remove
         </button>
       </div>
