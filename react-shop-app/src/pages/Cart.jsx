@@ -16,24 +16,28 @@ const Cart = () => {
     <div>
       {
         cart.length > 0 ?
-          <div>
-            <div>
+          <div className='w-full lg:w-7/12 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 mx-auto mt-4'>
+            <div className='flex flex-col'>
               {
                 cart.map((item) => {
                   return <CartItem item={item} key={item.id} />
                 })
               }
             </div>
-            <div>
-              <h1>Your Cart</h1>
-              <h2>Summary</h2>
-              <p>
-                <span>Total Items: {cart.length}</span>
-              </p>
-            </div>
-            <div>
-              <h1>Total Amount: {totalAmt}</h1>
-              <button>Checkout</button>
+            <div className='h-[220px] flex flex-col m-2 border-2 border-yellow-600 p-4 rounded-3xl justify-between'>
+              <h1 className='text-2xl font-semibold'>Your Cart</h1>
+
+              <div className='flex flex-col gap-4'>
+                <h2 className='text-[18px] mt-2 font-semibold'>Summary</h2>
+
+                <div className='font-semibold'>
+                  <span>Total Items : {cart.length}</span>
+                  <h1>Total Amount : {totalAmt} ₹</h1>
+                </div>
+                <button className='py-1 w-[180px] text-[16px] font-semibold text-white bg-blue-600 ring ring-blue-900 rounded-3xl'>
+                  Checkout
+                </button>
+              </div>
             </div>
           </div> :
 

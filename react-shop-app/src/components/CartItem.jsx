@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { remove } from '../redux/slices/CartSlice';
 import { toast } from 'react-hot-toast';
+import { FaTrashAlt } from "react-icons/fa";
 
 const CartItem = ({ item }) => {
 
@@ -9,27 +10,27 @@ const CartItem = ({ item }) => {
 
   const removeFromCart = () => {
     dispatch(remove(item.id));
-    toast.error('Item removed!');
+    toast.success('Item removed!');
   }
 
   return (
-    <div>
-      <div>
-        <img src={item.image} />
+    <div className='flex flex-row gap-4 p-2 ring-2 ring-green-700 m-2 items-center justify-evenly rounded-3xl'>
+      <div className='p-2'>
+        <img src={item.image} className='h-[160px] w-[250px]' />
       </div>
-      <div>
-        <h1>
+      <div className='flex flex-col gap-4'>
+        <h1 className='text-[16px] font-semibold'>
           {item.title}
         </h1>
-        <p>
-          {item.description}
+        <p className='text-[14px]'>
+          {item.description.substring(0, 100)}....
         </p>
-        <p>
-          {item.price}
+        <p className='text-[16px] font-semibold'>
+          Price: <span className='text-green-700'>{item.price} ₹</span>
         </p>
-        <button onClick={removeFromCart}>
-          Remove
-        </button>
+        <div>
+          <FaTrashAlt className='text-[20px] text-red-600 cursor-pointer' onClick={removeFromCart}/>
+        </div>
       </div>
     </div>
   )
