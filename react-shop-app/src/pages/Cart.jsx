@@ -37,10 +37,10 @@ const Cart = () => {
             </div>
           </div> :
 
-          <div>
-            <h1>No Item Selected!</h1>
+          <div className='flex flex-col items-center justify-center mt-[250px] gap-4'>
+            <h1 className='text-[18px] font-semibold'>No Item Selected!</h1>
             <Link to='/'>
-              <button>
+              <button className='py-2 px-4 ring-2 ring-green-900 rounded-2xl text-[16px] text-white bg-green-600 font-semibold cursor-pointer'>
                 Shop Now
               </button>
             </Link>
