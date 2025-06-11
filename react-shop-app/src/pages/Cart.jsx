@@ -16,7 +16,7 @@ const Cart = () => {
     <div>
       {
         cart.length > 0 ?
-          <div className='w-full lg:w-7/12 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 mx-auto mt-4'>
+          <div className='w-full lg:w-8/12 grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 mx-auto m-4'>
             <div className='flex flex-col'>
               {
                 cart.map((item) => {
@@ -34,7 +34,7 @@ const Cart = () => {
                   <span>Total Items : {cart.length}</span>
                   <h1>Total Amount : {totalAmt.toFixed(2)} ₹</h1>
                 </div>
-                <button className='py-1 w-[180px] text-[16px] font-semibold text-white bg-blue-600 ring ring-blue-900 rounded-3xl'>
+                <button className='py-1 w-[180px] text-[16px] font-semibold text-white bg-blue-600 ring ring-blue-900 rounded-3xl cursor-pointer'>
                   Checkout
                 </button>
               </div>
@@ -42,7 +42,7 @@ const Cart = () => {
           </div> :
 
           <div className='flex flex-col items-center justify-center mt-[250px] gap-4'>
-            <h1 className='text-[18px] font-semibold'>No Item Selected!</h1>
+            <h1 className='text-[18px] font-semibold'>No Item in Cart!</h1>
             <Link to='/'>
               <button className='py-2 px-4 ring-2 ring-green-900 rounded-2xl text-[16px] text-white bg-green-600 font-semibold cursor-pointer'>
                 Shop Now
